@@ -1,0 +1,32 @@
+# Class Method aSong = Song.new(....) 
+
+class Song
+  def initialize(name, artist, duration) 
+    @name     = name    # zmienna obiektowa , zaczyna się od @
+    @artist   = artist
+    @duration = duration
+  end 
+ attr_reader :duration
+end
+
+class SongList
+  MaxTime = 5*60           #  5 minutes
+  def SongList.isTooLong(aSong)
+    return aSong.duration > MaxTime
+  end
+end
+song1 = Song.new("Bicylops", "Fleck", 260)
+puts( SongList.isTooLong(song1) ) 	
+song2 = Song.new("The Calling", "Santana", 468)
+puts( SongList.isTooLong(song2) )
+
+
+class Logger
+  private_class_method :new
+  @@logger = nil
+  def Logger.create
+    @@logger = new unless @@logger
+    @@logger
+  end
+end
+puts Logger.create.id
