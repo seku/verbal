@@ -1,2 +1,2 @@
 
-puts liczba%10
+ liczba%10
