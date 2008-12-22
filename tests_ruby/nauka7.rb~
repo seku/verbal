@@ -1,6 +1,0 @@
-class SongList
-  def initialize
-    @songs = Array.new
-  end
-end
-
