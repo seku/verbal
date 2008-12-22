@@ -3,6 +3,7 @@ module Verbal
   VERSION = '1.1.0'
 
   module Core
+		
     
     # returns exponent of value in cubic interval
     # 0 for 0-999, 3 for 1000-999999, 6 for 1_000_000-999_999_999 and so on ...
@@ -17,18 +18,22 @@ module Verbal
 
     
     def process_thousands(value)
-      e  = exponent(value)
       readable_slices = []
-      while e > 0
-        remainder ||= value
-        readable_slices << [e, (remainder / 10**e)]
-        remainder = remainder % 10**e
-        e -= 3
+	  if value == 0
+        readable_slices << [0,0]
+	  else 
+	    e  = exponent(value)
+        
+          while e > 0
+            remainder ||= value
+            readable_slices << [e, (remainder / 10**e)]
+            remainder = remainder % 10**e
+            e -= 3
+          end
+          readable_slices << [0, value % 10**3]
+          return readable_slices.sort.reverse.delete_if {|k, v| v.zero?}
       end
-      readable_slices << [0, value % 10**3]
-      return readable_slices.sort.reverse.delete_if {|k, v| v.zero?}
     end
-
     module_function :process_thousands, :exponent
 
   end
