@@ -9,8 +9,6 @@
 
   - English *
   - Polish
-  - German
-  - Spanish
 
   NOTE: It's American English numbering system
   http://www.mazes.com/AmericanNumberingSystem.html
@@ -28,13 +26,6 @@
 
   Verbal::English::Numbers.to_words(123_456_789)
   => "one hundred twenty-three million four hundred fifty-six thousand seven hundred and eighty-nine"
-
-  Verbal::Spanish::Numbers.to_words(123_456_789)
-  => "ciento veintitres million cuartocientos cincuenta y seis mil setentos ochenta y nuevo"
-
-  Verbal::German::Numbers.to_words(123_456_789)
-  => "einhundertzwanzigdreimillionvierhundertfunfzigsechstausendsiebenhundertachtzigneun"
-
 
   2) CURRENCIES:
 

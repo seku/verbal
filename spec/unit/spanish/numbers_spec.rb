@@ -9,7 +9,7 @@ describe Verbal::Spanish::Numbers do
     Verbal::Spanish::Numbers.to_words(33).should     == 'triente y tres'
     Verbal::Spanish::Numbers.to_words(400).should  == 'cuartocientos'
     Verbal::Spanish::Numbers.to_words(908).should  == 'novecientos y ocho'
-	Verbal::Spanish::Numbers.to_words(999).should  == 'novecientos noventa y nuevo'
+		Verbal::Spanish::Numbers.to_words(999).should  == 'novecientos noventa y nuevo'
     Verbal::Spanish::Numbers.to_words(1000).should  == 'uno mil'
     Verbal::Spanish::Numbers.to_words(1020).should  == 'uno mil veinte'
   end
